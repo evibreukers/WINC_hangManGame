@@ -1,0 +1,403 @@
+/* ----- GENERAL ----- */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(88, 134, 204);
+  font-family: "Barlow", sans-serif;
+  color: white;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+/* ----- CONTAINER ----- */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "title title"
+    "input animation";
+  margin: 50px 10vw;
+}
+
+.titleBox {
+  grid-area: title;
+  text-align: center;
+  padding: 0 0 50px 0;
+}
+
+.inputBox {
+  grid-area: input;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.animationBox {
+  grid-area: animation;
+  height: 320px;
+  width: 80%;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.301);
+  display: flex;
+  justify-content: center;
+}
+
+/* ----- titlebox ----- */
+
+.titleBox h1 {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.titleBox h1:hover {
+  color: rgb(62, 202, 191);
+  transform: scale(1.2);
+  transition: transform 0.5s ease;
+}
+
+/* ----- inputbox ----- */
+
+.inputBox > * {
+  margin: 0 0 30px 0;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px 0px;
+  font-family: "Barlow", sans-serif;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  color: blue;
+  transition: background-color 0.5s ease 0s, color 0.1s ease 0s;
+}
+
+button:hover {
+  background-color: mediumaquamarine;
+  color: white;
+  transition: background-color 0.5s ease 0s, color 0.1s ease 0s;
+}
+
+input[type="text"] {
+  padding: 10px 15px;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 2px;
+  width: 150px;
+  font-size: 1.2rem;
+}
+
+.status-panel {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.status1,
+.status2 {
+  flex: 1;
+  padding: 20px;
+  margin: 5px;
+  background-color: mediumaquamarine;
+  border-radius: 5px;
+}
+
+.the_word {
+  margin-top: 10px;
+  font-size: 3rem;
+}
+
+.status2:hover i {
+  color: rgb(211, 89, 140);
+}
+
+/* ----- animationbox ----- */
+
+.animationBox h2 {
+  font-size: 3rem;
+}
+
+/* ----- win ----- */
+
+.win {
+  display: none;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.star {
+  position: absolute;
+  top: -30px;
+  left: 0px;
+  width: 100%;
+  animation: star 1.5s ease infinite both alternate;
+}
+
+@keyframes star {
+  from {
+    transform: rotate(0deg) scale(0);
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* ----- lose ----- */
+
+.lose {
+  display: none;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.bomb {
+  position: absolute;
+  top: 120px;
+  left: 30%;
+  width: 45%;
+  animation: bomb 0.5s ease infinite both alternate;
+}
+
+@keyframes bomb {
+  from {
+    transform: rotate(-10deg) scale(1);
+  }
+  to {
+    transform: rotate(10deg) scale(3);
+  }
+}
+
+/* ----- hangmang puppet ----- */
+
+#hangman-container {
+  width: 300px;
+  height: 300px;
+  padding: 5%;
+  position: relative;
+}
+
+#hangman-container > * {
+  display: none;
+  background-color: white;
+  position: absolute;
+  border-radius: 2px;
+}
+
+#platform {
+  width: 250px;
+  height: 12px;
+  left: 30%;
+  top: 85%;
+  margin-left: calc(40% / -2); /* 153px */
+}
+
+.platformTrans {
+  animation: platform 0.5s ease-in-out;
+}
+
+@keyframes platform {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 250px;
+  }
+}
+
+#post {
+  width: 12px;
+  height: 70%;
+  top: 15%;
+  right: 65%;
+}
+
+.postTrans {
+  animation: post 0.5s ease-in-out;
+}
+
+@keyframes post {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 70%;
+  }
+}
+
+#bar {
+  width: 140px;
+  height: 12px;
+  top: 15%;
+  left: 25%;
+}
+
+.barTrans {
+  animation: bar 0.5s ease-in-out;
+}
+
+@keyframes bar {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 140px;
+  }
+}
+
+#rope {
+  width: 8px;
+  height: 15%;
+  right: 40%;
+  top: 15%;
+  border-radius: 0px;
+}
+
+.ropeTrans {
+  animation: rope 0.5s ease-in-out;
+}
+
+@keyframes rope {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 15%;
+  }
+}
+
+#head {
+  width: 40px;
+  height: 40px;
+  background-color: unset;
+  border: none;
+  border-radius: 50%;
+  right: 35%;
+  top: 28%;
+}
+
+.shape {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  stroke: white;
+  stroke-width: 9px;
+  stroke-dashoffset: 100px;
+  stroke-dasharray: 100px;
+  border-radius: 100%;
+  animation: head 0.5s ease-in-out forwards;
+  fill: none;
+}
+
+@keyframes head {
+  to {
+    stroke-dashoffset: 0px;
+  }
+}
+
+#torso {
+  width: 8px;
+  height: 60px;
+  top: 41%;
+  right: 40%;
+  border-radius: 0px;
+}
+
+.torsoTrans {
+  animation: torso 0.5s ease-in-out;
+}
+
+@keyframes torso {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 60px;
+  }
+}
+
+#left-arm,
+#right-arm {
+  width: 6px;
+  height: 15%;
+  top: 43%;
+}
+
+#left-leg,
+#right-leg {
+  width: 6px;
+  height: 15%;
+  top: 58%;
+}
+
+#left-arm,
+#left-leg {
+  right: 45%;
+  transform: rotate(45deg);
+}
+
+#right-arm,
+#right-leg {
+  right: 35%;
+  transform: rotate(-45deg);
+}
+
+.limbTrans {
+  animation: limbs 0.5s ease-in-out;
+}
+
+@keyframes limbs {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 15%;
+  }
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+/* regular tablet */
+@media only screen and (max-width: 979px) {
+  .animationBox {
+    width: 100%;
+    border: none;
+  }
+  .container {
+    grid-template-areas:
+      "title title"
+      "input input"
+      "animation animation";
+  }
+}
+
+/* regular phone */
+@media only screen and (max-width: 549px) {
+  .container {
+    margin: 50px 5vw;
+  }
+}

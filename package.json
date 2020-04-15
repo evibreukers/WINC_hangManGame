@@ -1,0 +1,23 @@
+{
+  "name": "hangmangame",
+  "version": "1.0.0",
+  "description": "Winc Academy's 4th project of the Front-end Development traineeship",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evibreukers/hangmanGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evibreukers/hangmanGame/issues"
+  },
+  "homepage": "https://github.com/evibreukers/hangmanGame#readme",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
+}

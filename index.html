@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hangman</title>
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <!-- ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+
+    <!-- FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JAVASCRIPT -->
+    <script defer src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="titleBox">
+        <h1>HANGMAN THE GAME</h1>
+        <p>[no people will actually be harmed during this game]</p>
+      </div>
+
+      <div class="inputBox">
+        <div class="input-panel">
+          <input type="text" placeholder="Add letter" maxlength="1" />
+          <button class="guess">Guess</button>
+          <button class="restart"><i class="fas fa-redo"></i></button>
+        </div>
+
+        <div class="result-panel">
+          <h2>Guess the word:</h2>
+          <div class="the_word">_ _ _ _ _</div>
+        </div>
+
+        <div class="status-panel">
+          <span class="status1">
+            <p>Guessed letters:</p>
+            <div class="guessed_letters"></div>
+          </span>
+
+          <span class="status2">
+            <h1 class="lives"><span></span> <i class="far fa-heart"></i></h1>
+          </span>
+        </div>
+      </div>
+
+      <div class="animationBox">
+        <div id="hangman-container">
+          <div id="platform" class="puppet"></div>
+          <div id="post" class="puppet"></div>
+          <div id="bar" class="puppet"></div>
+          <div id="rope" class="puppet"></div>
+          <div id="head" class="puppet">
+            <svg height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+              <circle
+                cx="20"
+                cy="20"
+                r="15"
+                class="shape"
+                height="40"
+                width="40"
+              ></circle>
+            </svg>
+          </div>
+          <div id="torso" class="puppet"></div>
+          <div id="left-arm" class="puppet"></div>
+          <div id="right-arm" class="puppet"></div>
+          <div id="left-leg" class="puppet"></div>
+          <div id="right-leg" class="puppet"></div>
+        </div>
+
+        <div class="win">
+          <h2>You won!</h2>
+          <img class="star" src="star.png" alt="star image" />
+        </div>
+
+        <div class="lose">
+          <h2>You lost!</h2>
+          <p>The chosen word was: <span></span></p>
+          <img class="bomb" src="bomb.png" alt="bomb image" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
