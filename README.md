@@ -36,5 +36,8 @@ HTML, CSS, JavaScript, Unit Testing (Jest)
 Play the game..if you dare...
 https://hangman-thegame.netlify.app
 
+
+![alt text](preview.png)
+
 ENJOY!
 
