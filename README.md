@@ -38,7 +38,8 @@ HTML, CSS, JavaScript, Unit Testing (Jest)
 
 ## 🚀 Preview
 
-https://evibreukers.github.io/hangmanGame/
+Play the game..if you dare...
+https://hangman-thegame.netlify.app
 
 ENJOY!
 
