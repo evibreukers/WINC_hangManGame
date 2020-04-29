@@ -1,15 +1,10 @@
 # hangmanGame
 
-Winc Academy's 4th project of the Front-end Development traineeship
-
-## 💬 Files
-
-- scriptMessy.js // starting code
-- scriptClean.js // code rewritten
+Winc Academy's 4th project of the Front-end Development traineeship.
 
 ## 💬 Project Goal
 
-The goal is making a Hangman Game using JavaScript. Based on the principle of test driven development (TDD);
+The goal of this pair programming project is making a Hangman Game using JavaScript. Based on the principle of test driven development (TDD);
 - first the tests are written for a functionality
 - run the test, it should fail
 - write the code for the functionality
@@ -38,7 +33,8 @@ HTML, CSS, JavaScript, Unit Testing (Jest)
 
 ## 🚀 Preview
 
-https://evibreukers.github.io/hangmanGame/
+Play the game..if you dare...
+https://hangman-thegame.netlify.app
 
 ENJOY!
 
